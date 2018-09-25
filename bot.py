@@ -38,7 +38,7 @@ def getter():
             alfa = beta + alfa
             vk.messages.send(user_id='75772038',message=alfa,keyboard=keyboard.get_keyboard())    
         print(1)        
-        time.sleep(60)
+        time.sleep(360)
 def worker():
         for event in longpoll.listen():
 
