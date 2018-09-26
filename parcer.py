@@ -32,8 +32,7 @@ def get_url():
 #    hg.append(f.get('href'))
         i=i+1
     month=fille.get_month()
-    h = len(hg)
-    uk=hg[h]
+    uk=hg[-1]
     kh=uk.find(month)
     fh=uk.find('224/')
     cast = uk[fh+4:kh+len(month)]
