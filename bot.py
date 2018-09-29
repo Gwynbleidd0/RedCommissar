@@ -36,7 +36,8 @@ def getter():
             beta = 'Уведомление!\n'+result[1]+'\n__________________________\n'
             alfa = botT.get_book('11а')
             alfa = beta + alfa
-            vk.messages.send(user_id='75772038',message=alfa,keyboard=keyboard.get_keyboard())    
+            vk.messages.send(user_id='75772038',message=alfa,keyboard=keyboard.get_keyboard())
+            vk.messages.send(user_id='86658739',message=alfa,keyboard=keyboard.get_keyboard())        
         print(1)        
         time.sleep(360)
 def worker():
