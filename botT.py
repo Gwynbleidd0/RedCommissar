@@ -30,6 +30,8 @@ def get_timetable2():
     t1=False
     res=parcer.get_url()
     print(res)
+    if res[0]==0:
+        return(False,'')
     r = requests.get(res[0])
     if r.ok==True:
          with open('base.xls', "wb") as code:

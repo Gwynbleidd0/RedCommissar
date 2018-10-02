@@ -31,6 +31,10 @@ def getter():
     while(True):
         global last_date
         result = botT.get_timetable2()
+        if result[1]==0:
+            print(1)
+            time.sleep(360)
+            continue            
         if last_date != result[1]:
             last_date = result[1]
             beta = 'Уведомление!\n'+result[1]+'\n__________________________\n'
@@ -53,17 +57,21 @@ def worker():
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='11б':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n__________________________\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('11б')
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='11в':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n__________________________\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('11в')
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='Инфо, так сказать':
                     botT.get_timetable2()
                     alfa = botT.get_book('11а')
-                    vk.messages.send(user_id=event.user_id,message='v1.1 VK_REBORN\nВсе права принадлежат тому, кому принадлежат.\nЧто пишет на доске гуманитарий, когда его вызывают на задачу по физике?\nНе дано',keyboard=keyboard.get_keyboard())  
+                    vk.messages.send(user_id=event.user_id,message='v1.2 VK_REBORN(Alfa)\nВсе права принадлежат тому, кому принадлежат.\nЧто пишет на доске гуманитарий, когда его вызывают на задачу по физике?\nНе дано',keyboard=keyboard.get_keyboard())  
                 if event.text=='Начать':
                     vk.messages.send(user_id=event.user_id,message='Бот был разработан для 11А.Вопросы пишите куда нибудь.',keyboard=keyboard.get_keyboard())
                 print()
