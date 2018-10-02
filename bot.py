@@ -14,6 +14,10 @@ keyboard.add_button('11а', color=VkKeyboardColor.DEFAULT)
 keyboard.add_button('11б', color=VkKeyboardColor.DEFAULT)
 keyboard.add_button('11в', color=VkKeyboardColor.DEFAULT)
 keyboard.add_line()  # Переход на вторую строку
+keyboard.add_button('10а', color=VkKeyboardColor.DEFAULT)
+keyboard.add_button('10б', color=VkKeyboardColor.DEFAULT)
+keyboard.add_button('10в', color=VkKeyboardColor.DEFAULT)
+keyboard.add_line()
 keyboard.add_button('Инфо, так сказать', color=VkKeyboardColor.NEGATIVE)
 longpoll = VkLongPoll(vk_session)
 last_date = ''
@@ -68,10 +72,28 @@ def worker():
                     botT.get_timetable2()
                     alfa = botT.get_book('11в')
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
+                if event.text=='10а':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n__________________________\n'
+                    alfa = botT.get_book('10а')
+                    alfa = beta + alfa
+                    vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
+                if event.text=='10б':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n__________________________\n'
+                    botT.get_timetable2()
+                    alfa = botT.get_book('10б')
+                    vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
+                if event.text=='10в':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n__________________________\n'
+                    botT.get_timetable2()
+                    alfa = botT.get_book('10в')
+                    vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='Инфо, так сказать':
                     botT.get_timetable2()
                     alfa = botT.get_book('11а')
-                    vk.messages.send(user_id=event.user_id,message='v1.2 VK_REBORN(Alfa)\nВсе права принадлежат тому, кому принадлежат.\nЧто пишет на доске гуманитарий, когда его вызывают на задачу по физике?\nНе дано',keyboard=keyboard.get_keyboard())  
+                    vk.messages.send(user_id=event.user_id,message='v1.3 VK_REBORN(Alfa)\nВсе права принадлежат тому, кому принадлежат.\nЧто пишет на доске гуманитарий, когда его вызывают на задачу по физике?\nНе дано',keyboard=keyboard.get_keyboard())  
                 if event.text=='Начать':
                     vk.messages.send(user_id=event.user_id,message='Бот был разработан для 11А.Вопросы пишите куда нибудь.',keyboard=keyboard.get_keyboard())
                 print()
