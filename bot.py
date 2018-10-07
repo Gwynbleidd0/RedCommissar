@@ -66,12 +66,14 @@ def worker():
                     beta = res[1]+'\n__________________________\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('11б')
+                    alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='11в':
                     res = botT.get_timetable2()
                     beta = res[1]+'\n__________________________\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('11в')
+                    alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='10а':
                     res = botT.get_timetable2()
@@ -84,16 +86,16 @@ def worker():
                     beta = res[1]+'\n__________________________\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('10б')
+                    alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='10в':
                     res = botT.get_timetable2()
                     beta = res[1]+'\n__________________________\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('10в')
+                    alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='Инфо, так сказать':
-                    botT.get_timetable2()
-                    alfa = botT.get_book('11а')
                     vk.messages.send(user_id=event.user_id,message='v1.5 VK_REBORN(Beta)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nЕсли в супермаркете пронести мимо кассы под курткой бутылку минералки, то это будет чистой воды воровство\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())  
                 if event.text=='Начать':
                     vk.messages.send(user_id=event.user_id,message='Бот был разработан для 11А.Вопросы пишите нашему консультанту(Мы не несем ответственности за последствия).',keyboard=keyboard.get_keyboard())
