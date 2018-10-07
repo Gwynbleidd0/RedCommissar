@@ -94,7 +94,7 @@ def worker():
                 if event.text=='Инфо, так сказать':
                     botT.get_timetable2()
                     alfa = botT.get_book('11а')
-                    vk.messages.send(user_id=event.user_id,message='v1.5 VK_REBORN(Beta)\nВсе права принадлежат тому, кому принадлежат.\nЕсли в супермаркете пронести мимо кассы под курткой бутылку минералки, то это будет чистой воды воровство\nКонсультант по проблемам с ботом:https://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())  
+                    vk.messages.send(user_id=event.user_id,message='v1.5 VK_REBORN(Beta)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nЕсли в супермаркете пронести мимо кассы под курткой бутылку минералки, то это будет чистой воды воровство\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())  
                 if event.text=='Начать':
                     vk.messages.send(user_id=event.user_id,message='Бот был разработан для 11А.Вопросы пишите нашему консультанту(Мы не несем ответственности за последствия).',keyboard=keyboard.get_keyboard())
                 print()
