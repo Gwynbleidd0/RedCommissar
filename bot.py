@@ -96,7 +96,7 @@ def worker():
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='Инфо, так сказать':
-                    vk.messages.send(user_id=event.user_id,message='v1.5 VK_REBORN(Beta)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nЕсли в супермаркете пронести мимо кассы под курткой бутылку минералки, то это будет чистой воды воровство\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())  
+                    vk.messages.send(user_id=event.user_id,message='v1.6 VK_REBORN(BetaFix)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nЕсли в супермаркете пронести мимо кассы под курткой бутылку минералки, то это будет чистой воды воровство\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())  
                 if event.text=='Начать':
                     vk.messages.send(user_id=event.user_id,message='Бот был разработан для 11А.Вопросы пишите нашему консультанту(Мы не несем ответственности за последствия).',keyboard=keyboard.get_keyboard())
                 print()
