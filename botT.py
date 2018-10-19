@@ -64,9 +64,15 @@ def get_book(class_number):
     while f<sheet.nrows:
         ada = sheet.row_values(f)[rownum]
         if ada=='Англ. язык':
-            ada='Англ. язык '+'('+str(sheet.row_values(f+1)[rownum+1])+'/'+str(sheet.row_values(f+1)[rownum+3])+')'
+            try:
+                ada='Англ. язык '+'('+str(sheet.row_values(f+1)[rownum+1])+'/'+str(sheet.row_values(f+1)[rownum+3])+')'
+            except IndexError:
+                ada='Англ. язык '+'('+str(sheet.row_values(f+1)[rownum+1])+'/--)'
         if ada=='Инф. и ИКТ':
-            ada='Инф. и ИКТ '+'('+str(sheet.row_values(f+1)[rownum+1])+'/'+str(sheet.row_values(f+1)[rownum+3])+')'
+            try:
+                ada='Инф. и ИКТ '+'('+str(sheet.row_values(f+1)[rownum+1])+'/'+str(sheet.row_values(f+1)[rownum+3])+')'
+            except IndexError:
+                ada='Инф. и ИКТ '+'('+str(sheet.row_values(f+1)[rownum+1])+'/--)'
         result.append(ada)
         f=f+2
     print(result)

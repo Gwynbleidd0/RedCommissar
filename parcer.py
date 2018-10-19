@@ -4,7 +4,7 @@ def get_url():
     ses=HTMLSession()
     r = ses.get('https://s11028.edu35.ru/2013-06-12-15-17-31/raspisanie')
     i=0
-    m=len(r.html.find('.at_icon'))
+    m=len(r.html.find('.at_url'))
     hg = []
     while i<m:
         g=1

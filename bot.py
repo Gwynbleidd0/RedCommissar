@@ -30,7 +30,8 @@ def checker():
             vk.messages.send(user_id='75772038',message=xd,keyboard=keyboard.get_keyboard())
             last_xd = xd    
         print(1)        
-        time.sleep(20)        
+        time.sleep(20)  
+"""      
 def getter():
     while(True):
         global last_date
@@ -49,7 +50,8 @@ def getter():
 #            vk.messages.send(user_id='86658739',message=alfa,keyboard=keyboard.get_keyboard())        
         print(1)        
         time.sleep(360)
-def worker():
+"""
+def main():
         for event in longpoll.listen():
 
             if event.type == VkEventType.MESSAGE_NEW:
@@ -100,18 +102,16 @@ def worker():
                 if event.text=='Начать':
                     vk.messages.send(user_id=event.user_id,message='Бот был разработан для 11А.Вопросы пишите нашему консультанту(Мы не несем ответственности за последствия).',keyboard=keyboard.get_keyboard())
                 print()
-
+"""
 def main():
-    """ Пример использования longpoll
-        https://vk.com/dev/using_longpoll
-        https://vk.com/dev/using_longpoll_2
-    """
+
+
 
     thread1 = threading.Thread(target=worker)
     thread2 = threading.Thread(target=getter)
     thread1.start()
     thread2.start()
-
+"""
 
 if __name__ == '__main__':
     main()
