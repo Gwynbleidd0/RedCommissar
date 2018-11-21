@@ -100,7 +100,7 @@ def main():
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='Инфо, так сказать':
-                    vk.messages.send(user_id=event.user_id,message='v2.0 VK_REBORN(<|Ultima_Thule|>)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nПочему у римлян не было проблем с алгеброй? Потому что X всегда 10.\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())
+                    vk.messages.send(user_id=event.user_id,message='v2.0 VK_REBORN(MagnumOpus)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nПочему у римлян не было проблем с алгеброй? Потому что X всегда 10.\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())
                 if event.text=='Как подключить уведомления?':
                     vk.messages.send(user_id=event.user_id,message='Подключить уведомления можно только в беседу. Позже я возможно переделаю эту систему. А пока пишите мне чтобы подключить эту функцию.\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())    
                 if event.text=='Начать':
