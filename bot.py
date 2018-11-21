@@ -19,6 +19,8 @@ keyboard.add_button('10б', color=VkKeyboardColor.DEFAULT)
 keyboard.add_button('10в', color=VkKeyboardColor.DEFAULT)
 keyboard.add_line()
 keyboard.add_button('Инфо, так сказать', color=VkKeyboardColor.NEGATIVE)
+keyboard.add_line()
+keyboard.add_button('Как подключить уведомления?', color=VkKeyboardColor.POSITIVE)
 longpoll = VkLongPoll(vk_session)
 last_date = ''
 last_xd = ''
@@ -59,46 +61,48 @@ def main():
                 print('Текст: ', event.text)
                 if event.text=='11а':
                     res = botT.get_timetable2()
-                    beta = res[1]+'\n__________________________\n'
+                    beta = res[1]+'\n++++++++++++++++++++++++++\n'
                     alfa = botT.get_book('11а')
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='11б':
                     res = botT.get_timetable2()
-                    beta = res[1]+'\n__________________________\n'
+                    beta = res[1]+'\n++++++++++++++++++++++++++\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('11б')
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='11в':
                     res = botT.get_timetable2()
-                    beta = res[1]+'\n__________________________\n'
+                    beta = res[1]+'\n++++++++++++++++++++++++++\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('11в')
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='10а':
                     res = botT.get_timetable2()
-                    beta = res[1]+'\n__________________________\n'
+                    beta = res[1]+'\n++++++++++++++++++++++++++\n'
                     alfa = botT.get_book('10а')
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='10б':
                     res = botT.get_timetable2()
-                    beta = res[1]+'\n__________________________\n'
+                    beta = res[1]+'\n++++++++++++++++++++++++++\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('10б')
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='10в':
                     res = botT.get_timetable2()
-                    beta = res[1]+'\n__________________________\n'
+                    beta = res[1]+'\n++++++++++++++++++++++++++\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('10в')
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='Инфо, так сказать':
-                    vk.messages.send(user_id=event.user_id,message='v1.6 VK_REBORN(BetaFix)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nЕсли в супермаркете пронести мимо кассы под курткой бутылку минералки, то это будет чистой воды воровство\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())  
+                    vk.messages.send(user_id=event.user_id,message='v2.0 VK_REBORN(<|Ultima_Thule|>)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nПочему у римлян не было проблем с алгеброй? Потому что X всегда 10.\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())
+                if event.text=='Как подключить уведомления?':
+                    vk.messages.send(user_id=event.user_id,message='Подключить уведомления можно только в беседу. Позже я возможно переделаю эту систему. А пока пишите мне чтобы подключить эту функцию.\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())    
                 if event.text=='Начать':
                     vk.messages.send(user_id=event.user_id,message='Бот был разработан для 11А.Вопросы пишите нашему консультанту(Мы не несем ответственности за последствия).',keyboard=keyboard.get_keyboard())
                 print()
