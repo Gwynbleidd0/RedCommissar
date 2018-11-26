@@ -13,12 +13,12 @@ def get_url():
         print(f)
         listhor=['1 смена','1_смена','1смена','1 СМЕНА']
         for j in listhor:
-            result=f.find(j)
+            result.append(f.find(j))
 #        fh=f.find('224/')
 #        day_real=fille.get_real_date()
 #        day=int(f[fh+4:fh+6])
 #        if result!=-1 and day_real==day:
-        if result!=-1: 
+        if result[-1]!=-1: 
             hg.append(f)
 
         i=i+1

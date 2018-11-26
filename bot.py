@@ -94,7 +94,7 @@ def main():
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='10в':
                     res = botT.get_timetable2()
-                    beta = res[1]+'\n++++++++++++++++++++++++++\n'
+                    beta = res[1]+'\n==========================\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('10в')
                     alfa = beta + alfa
