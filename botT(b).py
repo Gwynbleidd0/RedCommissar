@@ -30,6 +30,8 @@ def get_timetable2():
     t1=False
     res=parcer.get_url()
     print(res)
+    if res[0]==0:
+        return(False,'')
     r = requests.get(res[0])
     if r.ok==True:
          with open('base.xls', "wb") as code:
@@ -60,7 +62,18 @@ def get_book(class_number):
     result=[]
 
     while f<sheet.nrows:
-        result.append(sheet.row_values(f)[rownum])
+        ada = sheet.row_values(f)[rownum]
+        if ada=='Англ. язык':
+            try:
+                ada='Англ. язык '+'('+str(sheet.row_values(f+1)[rownum+1])+'/'+str(sheet.row_values(f+1)[rownum+3])+')'
+            except IndexError:
+                ada='Англ. язык '+'('+str(sheet.row_values(f+1)[rownum+1])+'/--)'
+        if ada=='Инф. и ИКТ':
+            try:
+                ada='Инф. и ИКТ '+'('+str(sheet.row_values(f+1)[rownum+1])+'/'+str(sheet.row_values(f+1)[rownum+3])+')'
+            except IndexError:
+                ada='Инф. и ИКТ '+'('+str(sheet.row_values(f+1)[rownum+1])+'/--)'
+        result.append(ada)
         f=f+2
     print(result)
 #    while 
@@ -83,20 +96,7 @@ def get_lastfille():
 #def check_updates():
 
 #print(get_timetable2())    
-"""
-print(os.path.getmtime(files[0]))
-i=0
-while i<len(files):    
-    os.path.getmtime(files[i])
-    i=i+1"""
-"""  
-    while f<sheet.nrows:
-        if sheet.row_values(f)[rownum]!='':
-            result.append(sheet.row_values(f)[rownum])
-        elif sheet.row_values(f+1)[rownum]!='':
-            break;
-        f=f+2
-""" 
+print(get_book('11а'))
 
 def get_hook():
     rb =xlrd.open_workbook('base.xls')
