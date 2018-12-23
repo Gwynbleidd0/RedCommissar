@@ -19,8 +19,14 @@ keyboard.add_button('10б', color=VkKeyboardColor.DEFAULT)
 keyboard.add_button('10в', color=VkKeyboardColor.DEFAULT)
 keyboard.add_line()
 keyboard.add_button('Инфо, так сказать', color=VkKeyboardColor.NEGATIVE)
-keyboard.add_line()
 keyboard.add_button('Как подключить уведомления?', color=VkKeyboardColor.POSITIVE)
+keyboard.add_line()
+keyboard.add_button('9а', color=VkKeyboardColor.DEFAULT)
+keyboard.add_button('9б', color=VkKeyboardColor.DEFAULT)
+keyboard.add_button('9в', color=VkKeyboardColor.DEFAULT)
+keyboard.add_line()
+keyboard.add_button('9г', color=VkKeyboardColor.DEFAULT)
+keyboard.add_button('9д', color=VkKeyboardColor.DEFAULT)
 longpoll = VkLongPoll(vk_session)
 last_date = ''
 last_xd = ''
@@ -97,6 +103,41 @@ def main():
                     beta = res[1]+'\n==========================\n'
                     botT.get_timetable2()
                     alfa = botT.get_book('10в')
+                    alfa = beta + alfa
+                    vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
+                if event.text=='9а':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n==========================\n'
+                    botT.get_timetable2()
+                    alfa = botT.get_book('9а')
+                    alfa = beta + alfa
+                    vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
+                if event.text=='9б':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n==========================\n'
+                    botT.get_timetable2()
+                    alfa = botT.get_book('9б')
+                    alfa = beta + alfa
+                    vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
+                if event.text=='9в':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n==========================\n'
+                    botT.get_timetable2()
+                    alfa = botT.get_book('9в')
+                    alfa = beta + alfa
+                    vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
+                if event.text=='9г':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n==========================\n'
+                    botT.get_timetable2()
+                    alfa = botT.get_book('9г')
+                    alfa = beta + alfa
+                    vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
+                if event.text=='9д':
+                    res = botT.get_timetable2()
+                    beta = res[1]+'\n==========================\n'
+                    botT.get_timetable2()
+                    alfa = botT.get_book('9д')
                     alfa = beta + alfa
                     vk.messages.send(user_id=event.user_id,message=alfa,keyboard=keyboard.get_keyboard())
                 if event.text=='Инфо, так сказать':
