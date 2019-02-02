@@ -12,13 +12,13 @@ vk_session = vk_api.VkApi(token = 'fad3d76abe4c195a54916d631fc453b0ddf8005caa387
 vk = vk_session.get_api()
 ero_links=['photo-121679067_456239349','photo-121679067_456240260','photo-121679067_456240079','photo-121679067_456240079','photo-121679067_456240078','photo-121679067_456240077','photo-121679067_456240075','photo-121679067_456240074','photo-121679067_456240071','photo-121679067_456240063','photo-121679067_456240060','photo-121679067_456240057','photo-121679067_456239221','photo-121679067_456239345','photo-121679067_456239349']
 keyboard = VkKeyboard()
-keyboard.add_button('11а', color=VkKeyboardColor.DEFAULT)
-keyboard.add_button('11б', color=VkKeyboardColor.DEFAULT)
-keyboard.add_button('11в', color=VkKeyboardColor.DEFAULT)
+keyboard.add_button('11а', color=VkKeyboardColor.POSITIVE)
+keyboard.add_button('11б', color=VkKeyboardColor.POSITIVE)
+keyboard.add_button('11в', color=VkKeyboardColor.POSITIVE)
 keyboard.add_line()  # Переход на вторую строку
-keyboard.add_button('10а', color=VkKeyboardColor.DEFAULT)
-keyboard.add_button('10б', color=VkKeyboardColor.DEFAULT)
-keyboard.add_button('10в', color=VkKeyboardColor.DEFAULT)
+keyboard.add_button('10а', color=VkKeyboardColor.PRIMARY)
+keyboard.add_button('10б', color=VkKeyboardColor.PRIMARY)
+keyboard.add_button('10в', color=VkKeyboardColor.PRIMARY)
 keyboard.add_line()
 keyboard.add_button('9а', color=VkKeyboardColor.DEFAULT)
 keyboard.add_button('9б', color=VkKeyboardColor.DEFAULT)
@@ -27,8 +27,7 @@ keyboard.add_line()
 keyboard.add_button('9г', color=VkKeyboardColor.DEFAULT)
 keyboard.add_button('9д', color=VkKeyboardColor.DEFAULT)
 keyboard.add_line()
-keyboard.add_button('Инфо, так сказать', color=VkKeyboardColor.NEGATIVE)
-keyboard.add_button('Как подключить уведомления?', color=VkKeyboardColor.POSITIVE)
+keyboard.add_button('Инф0рмация', color=VkKeyboardColor.NEGATIVE)
 longpoll = VkLongPoll(vk_session)
 last_date = ''
 last_xd = ''
@@ -154,12 +153,12 @@ def main():
                     text[0] = ''
                     ero_links.append(text[1])
                     vk.messages.send(user_id=event.user_id,message='Готово!',keyboard=keyboard.get_keyboard())
-                elif event.text=='Инфо, так сказать':
-                    vk.messages.send(user_id=event.user_id,message='v2.0 VK_REBORN(MagnumOpus)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nПочему у римлян не было проблем с алгеброй? Потому что X всегда 10.\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())
+                elif event.text=='Инф0рмация':
+                    vk.messages.send(user_id=event.user_id,message='v2.2 VK_REBORN(A contrario)\nВсе права принадлежат тому, кому принадлежат.\n_______________________________________________\nНичего не изменилось. Мне просто захотелось обновление\n_______________________________________________\nКонсультант по проблемам с ботом:\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())
                 elif event.text=='Как подключить уведомления?':
                     vk.messages.send(user_id=event.user_id,message='Подключить уведомления можно только в беседу. Позже я возможно переделаю эту систему. А пока пишите мне чтобы подключить эту функцию.\nhttps://vk.com/id_gwynbleidd',keyboard=keyboard.get_keyboard())    
-                elif event.text=='Начать':
-                    vk.messages.send(user_id=event.user_id,message='Бот был разработан для 11А.Вопросы пишите нашему консультанту(Мы не несем ответственности за последствия).',keyboard=keyboard.get_keyboard())
+                elif event.text=='Начать' or event.text=='Start':
+                    vk.messages.send(user_id=event.user_id,message='Все претензии к тем кто выкладывает расписание на сайт.',keyboard=keyboard.get_keyboard())
                 print()
 """
 def main():

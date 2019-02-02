@@ -111,3 +111,4 @@ def get_month():
     else:
         mount='Ошибка'
     return(mount)
+print(get_month())
